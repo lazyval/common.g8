@@ -25,7 +25,8 @@ object Build extends Build {
         Dependencies.scalacheck,
         Dependencies.mockito,
         Dependencies.hamcrest
-      )
+      ),
+      initialCommands in console := "import $organization$._"
     ) ++
     scalariformSettings
 
