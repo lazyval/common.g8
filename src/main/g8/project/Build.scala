@@ -9,8 +9,6 @@ object Build extends Build {
     file("."),
     settings = commonSettings ++ Seq(
       libraryDependencies ++= Seq(
-        Dependencies.config,
-        Dependencies.scalaz
       )
     )
   )
@@ -19,25 +17,30 @@ object Build extends Build {
     Defaults.defaultSettings ++ 
     Seq(
       organization := "$organization$",
+      scalaVersion := "2.9.2",
       scalacOptions ++= Seq("-unchecked", "-deprecation"),
       libraryDependencies ++= Seq(
-        Dependencies.specs2,
-        Dependencies.scalacheck,
-        Dependencies.mockito,
-        Dependencies.hamcrest
+        Dependencies.Test.Specs2,
+        Dependencies.Test.ScalaCheck,
+        Dependencies.Test.Mockito,
+        Dependencies.Test.Hamcrest
       ),
-      initialCommands in console := "import $organization$._"
+      initialCommands in console := "import $organization$.$name$._"
     ) ++
     scalariformSettings
 
   object Dependencies {
-    // Compile
-    val config = "com.typesafe" % "config" % "0.4.0"
-    val scalaz = "org.scalaz" %% "scalaz-core" % "6.0.4"
-    // Test
-    val specs2 = "org.specs2" %% "specs2" % "1.9" % "test"
-    val scalacheck = "org.scalacheck" %% "scalacheck" % "1.9" % "test"
-    val mockito = "org.mockito" % "mockito-all" % "1.9.0" % "test"
-    val hamcrest = "org.hamcrest" % "hamcrest-all" % "1.1" % "test"
+
+    object Compile {
+      val Config = "com.typesafe" % "config" % "0.4.0"
+      val Scalaz = "org.scalaz" %% "scalaz-core" % "6.0.4"
+    }
+
+    object Test {
+      val Specs2 = "org.specs2" %% "specs2" % "1.9" % "test"
+      val ScalaCheck = "org.scalacheck" %% "scalacheck" % "1.9" % "test"
+      val Mockito = "org.mockito" % "mockito-all" % "1.9.0" % "test"
+      val Hamcrest = "org.hamcrest" % "hamcrest-all" % "1.1" % "test"
+    }
   }
 }
