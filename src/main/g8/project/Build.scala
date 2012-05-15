@@ -37,7 +37,7 @@ object Build extends Build {
     }
 
     object Test {
-      val Specs2 = "org.specs2" %% "specs2" % "1.9" % "test"
+      val Specs2 = "org.specs2" %% "specs2" % "1.10" % "test"
       val ScalaCheck = "org.scalacheck" %% "scalacheck" % "1.9" % "test"
       val Mockito = "org.mockito" % "mockito-all" % "1.9.0" % "test"
       val Hamcrest = "org.hamcrest" % "hamcrest-all" % "1.1" % "test"
