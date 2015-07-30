@@ -4,7 +4,7 @@ name := "$name$"
 
 // version is defined in version.sbt in order to support sbt-release
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.7"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-Xlint")
 
