@@ -13,7 +13,7 @@ scalacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.specs2" %% "specs2" % "2.0" % "test"
+  "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
 )
 
 initialCommands in console := "import $organization$._"
